@@ -1,0 +1,63 @@
+
+//+------------------------------------------------------------------+
+//|                                              One Direction Pro  |
+//|                                     https://www.forexroboteasy.com  |
+//|                                                    Forex Robot Easy Team |
+//+------------------------------------------------------------------+
+#property version      '1.00'
+#property strict
+
+// Input parameters
+input ENUM_ENTRY_METHOD EntryMethod = ENTRY_METHOD_RSI; // Entry method selection
+input int AveragePeriod = 14; // Average period indicator
+input double Distance = 10.0; // Distance from high and low bands and envelopes to commence trading
+input int MinWave = 3; // Minimum wave to start trades
+input int MaxWave = 5; // Maximum wave to stop trades
+input bool ReverseSignal = false; // Reverse signal
+input bool ContinueNewCycle = false; // Continue new cycle
+
+// Global variables
+int wave = 0; // Current wave count
+int buyPosition = 0; // Buy position count
+int sellPosition = 0; // Sell position count
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   // Add any necessary initialization code here
+   return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   // Add any necessary deinitialization code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Add any necessary code to enter and exit the market swiftly here
+   
+   // Check if new cycle should be continued
+   if (!ContinueNewCycle && (buyPosition > 0 || sellPosition > 0))
+   {
+      return;
+   }
+   
+   // Add any necessary code to manage open positions here
+   
+   // Add any necessary code for buying and selling here
+   
+   // Add any necessary code to manage hedging, Grid averaging, pyramiding, lot martingale, and anti-martingale strategies here
+   
+   // Add any necessary code to reverse the signal here
+}
+
+//+------------------------------------------------------------------+
